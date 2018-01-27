@@ -13,8 +13,9 @@ public class ScenarioController : MonoBehaviour {
     public Transform responseBox;
     private int playerIndex;
     private bool moveOn = false;
+    private int scenarioIndex = -1;
+    private bool finished = true;
 
-    // Use this for initialization
     void Awake ()
     {
         scenarios = new List<Scenario>();
@@ -27,6 +28,15 @@ public class ScenarioController : MonoBehaviour {
         responses.Add("");
         text.GetComponent<Text>().text = "";
         SetButtonsEnable(ScenarioMode.Story);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if (finished && scenarioIndex < scenarios.Count)
+        {
+            StartScenario(++scenarioIndex);
+        }
     }
 
     // Start presenting a new scenario
@@ -100,6 +110,7 @@ public class ScenarioController : MonoBehaviour {
     // Going through the scnario
     public IEnumerator PlayThroughScenario ()
     {
+        finished = false;
         for (int i = 0; i < currentScenario.playerScenarios.Count; ++i)
         {
             moveOn = false;
@@ -142,6 +153,7 @@ public class ScenarioController : MonoBehaviour {
         }
         text.GetComponent<Text>().text = "";
         SetButtonsEnable(ScenarioMode.Story);
+        finished = true;
     }
 
     // Make the buttons visible or invisible
