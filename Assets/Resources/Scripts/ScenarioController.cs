@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class ScenarioController : MonoBehaviour {
     public static ScenarioController instance;
     public List<Scenario> scenarios;
+    public List<string> responses;
     public Scenario currentScenario;
-    public Text text;
+    public Transform text;
     public Transform buttons;
+    public Transform responseBox;
     private int playerIndex;
     private bool moveOn = false;
 
@@ -20,8 +22,11 @@ public class ScenarioController : MonoBehaviour {
         {
             scenarios.Add(new Scenario(t.text));
         }
-        text.text = "";
-        SetButtonsEnable(false);
+        responses = new List<string>();
+        responses.Add("");
+        responses.Add("");
+        text.GetComponent<Text>().text = "";
+        SetButtonsEnable(ScenarioMode.Story);
     }
 
     // Start presenting a new scenario
@@ -34,14 +39,15 @@ public class ScenarioController : MonoBehaviour {
     // Display starting text
     public void DisplayStartText ()
     {
-        SetButtonsEnable(false);
-        text.text = currentScenario.playerScenarios[playerIndex].startText;
+        SetButtonsEnable(ScenarioMode.Story);
+        int getIndex = playerIndex == 1 ? 0 : 1;
+        text.GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].startText.Replace("[message]", responses[getIndex]);
     }
 
     // Display choices
     public void DisplayChoices ()
     { 
-        SetButtonsEnable(true);
+        SetButtonsEnable(ScenarioMode.Choice);
         for (int i = 0; i < buttons.childCount; ++i)
         {
             buttons.GetChild(i).Find("Text").GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].choice.choices[i];
@@ -51,13 +57,32 @@ public class ScenarioController : MonoBehaviour {
     // Display end text
     public void DisplayEndText ()
     {
-        SetButtonsEnable(false);
+        SetButtonsEnable(ScenarioMode.Story);
         string key = "";
         foreach (PlayerScenario p in currentScenario.playerScenarios)
         {
             key += p.choice.decision;
         }
-        text.text = currentScenario.playerScenarios[playerIndex].endText[key];
+        text.GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].endText[key];
+    }
+    
+    // Display response field
+    public void DisplayResponseField ()
+    {
+        SetButtonsEnable(ScenarioMode.Respond);
+        string key = "";
+        foreach (PlayerScenario p in currentScenario.playerScenarios)
+        {
+            key += p.choice.decision;
+        }
+        responseBox.GetChild(0).GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].responseText[key];
+    }
+
+    // Respond to scenario
+    public void Respond ()
+    {
+        responses[playerIndex] = responseBox.GetChild(1).GetComponent<InputField>().text;
+        responseBox.GetChild(1).GetComponent<InputField>().text = "";
     }
 
     // Make decision for given player scenario
@@ -105,12 +130,32 @@ public class ScenarioController : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
         }
+        for (int i = 0; i < currentScenario.playerScenarios.Count; ++i)
+        {
+            moveOn = false;
+            playerIndex = i;
+            DisplayResponseField();
+            while (!moveOn)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        text.GetComponent<Text>().text = "";
+        SetButtonsEnable(ScenarioMode.Story);
     }
 
     // Make the buttons visible or invisible
-    private void SetButtonsEnable (bool visible)
+    private void SetButtonsEnable (ScenarioMode mode)
     {
-        buttons.gameObject.SetActive(visible);
-        text.gameObject.SetActive(!visible);
+        buttons.gameObject.SetActive(mode == ScenarioMode.Choice);
+        text.gameObject.SetActive(mode == ScenarioMode.Story);
+        responseBox.gameObject.SetActive(mode == ScenarioMode.Respond);
     }
+}
+
+public enum ScenarioMode
+{
+    Story,
+    Choice,
+    Respond
 }

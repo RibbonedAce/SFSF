@@ -10,6 +10,9 @@ public class Choice {
     {
         decision = "";
         choices = new List<string>();
-        choices.AddRange(data.Split('|'));
+        foreach (string s in data.Split(new string[] { "[choiceSplit]" }, System.StringSplitOptions.None))
+        {
+            choices.Add(s.Trim());
+        }
     }
 }
