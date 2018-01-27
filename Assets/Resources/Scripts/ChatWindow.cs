@@ -8,10 +8,15 @@ public class ChatWindow : MonoBehaviour {
     public InputField input;
     public Text text;
     private RectTransform _rectTransform;
+    private int leftsideTextPadding;
 
     void Awake ()
     {
         _rectTransform = GetComponent<RectTransform>();
+
+        leftsideTextPadding = 5;
+        // Adds padding to the left of the text display
+        _rectTransform.GetChild(0).GetChild(0).GetComponent<RectTransform>().offsetMin = new Vector2(leftsideTextPadding, 0);
     }
 
     // Use this for initialization
