@@ -14,4 +14,13 @@ public class Utilities {
         }
         return result;
     }
+
+    // Make a UI object invisible without making it inactive
+    public static void MakeInvisible (RectTransform rt)
+    {
+        rt.anchorMin = new Vector2(-1, -1);
+        rt.anchorMax = new Vector2(0, 0);
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+    }
 }

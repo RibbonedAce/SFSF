@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-[RequireComponent(typeof(Text))]
-public class ChatText : MonoBehaviour {
-    private Text _text;
-
-    void Awake ()
-    {
-        _text = GetComponent<Text>();
-    }
+public class ChatText : NetworkBehaviour {
+    public string text;
 
     // Use this for initialization
     void Start ()
     {
-		
+        //Destroy(gameObject, 1);
 	}
 	
 	// Update is called once per frame
@@ -23,10 +18,4 @@ public class ChatText : MonoBehaviour {
     {
 		
 	}
-
-    // Change the text and its color
-    public void Change (string text)
-    {
-        _text.text = text;
-    }
 }
