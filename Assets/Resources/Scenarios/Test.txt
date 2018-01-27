@@ -1,0 +1,7 @@
+Player 1's backstory
+Choice 1A|Choice 1B
+Player 1's result AA|Player 1's result AB|Player 1's result BA|Player 1's result BB
+
+Player 2's backstory
+Choice 2A|Choice 2B
+Player 2's result AA|Player 2's result AB|Player 2's result BA|Player 2's result BB
