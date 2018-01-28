@@ -18,7 +18,7 @@ public class esc : MonoBehaviour {
 	{
 		DontDestroyOnLoad(gameObject);
 		Destroy(gameObject, 1);
-		SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        SceneManager.LoadScene(2);
 
 	}
 
@@ -35,7 +35,7 @@ public class esc : MonoBehaviour {
 
 	public void mainOnClick()
 	{
-		SceneManager.LoadScene("beginningScene", LoadSceneMode.Single);
+		SceneManager.LoadScene(0);
 	}
 
 	private IEnumerator quitDelay()
@@ -47,7 +47,7 @@ public class esc : MonoBehaviour {
 	private IEnumerator creditDelay()
 	{
 		yield return new WaitForSeconds(1);
-		SceneManager.LoadScene("creditScene", LoadSceneMode.Single);
+		SceneManager.LoadScene(1);
 	}
 
 }
