@@ -40,7 +40,7 @@ public class esc : MonoBehaviour {
 
 	private IEnumerator quitDelay()
 	{
-		yield return new WaitForSeconds(0.125f);
+		yield return new WaitForSeconds(1);
 		Application.Quit();
 	}
 

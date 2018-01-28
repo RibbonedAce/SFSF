@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 216058939}
   - component: {fileID: 216058941}
   m_Layer: 0
-  m_Name: click audio
+  m_Name: back/creadit audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f05d5aa21bbcf4e90a726048ad5f159e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b107bdcac406145619d58912b72f4c64, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -426,7 +426,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7a4c3fd10f30440a882161a6ece5d115, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a030d09de0b7b41ce8ab51458596f2e7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -721,7 +721,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: 'Back to Title
+
+'
 --- !u!222 &1092287632
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1127,7 +1129,7 @@ GameObject:
   - component: {fileID: 1895737031}
   - component: {fileID: 1895737030}
   m_Layer: 5
-  m_Name: main menu
+  m_Name: back to Title
   m_TagString: main menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
