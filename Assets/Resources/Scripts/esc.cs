@@ -16,6 +16,8 @@ public class esc : MonoBehaviour {
 
 	public void playOnClick()
 	{
+		DontDestroyOnLoad(gameObject);
+		Destroy(gameObject, 1);
 		SceneManager.LoadScene("Main", LoadSceneMode.Single);
 
 	}
