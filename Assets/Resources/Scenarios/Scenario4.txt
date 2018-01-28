@@ -1,6 +1,8 @@
 {StartText;0}
 It is now apparent to you that the Sleeper ship is on a course similar to your own. It is rare another ship will maintain such close proximity over multiple cycles unless this is so. The close proximity allows you to receive a transmission.
+
 [message]
+
 The two of you aren't quite clear of the nebulas yet. You discuss that there is a way for the both of you to maintain power through this sector. Your ships drift together and connect power supplies. With this connection, you will maintain 20 energy each. But there is the option of taking in a higher voltage of power and taking advantage of the Sleeper ship. This would give you 40 energy, but leave them with 0. If the Sleeper ship attempts to take advantage of you while you maintain a normal voltage, then you will end up with 0 and them with 40. Finally, if both ships attempt to take a higher voltage, both will end up with -10 energy.
 
 [partSplit]

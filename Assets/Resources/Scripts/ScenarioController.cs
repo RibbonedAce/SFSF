@@ -11,6 +11,8 @@ public class ScenarioController : MonoBehaviour {
     public Transform text;
     public Transform buttons;
     public Transform responseBox;
+    public Text playerIndicator;
+    public List<Color> playerColors;
     private Choice currentChoice;
     private int playerIndex;
     private bool moveOn = false;
@@ -58,7 +60,7 @@ public class ScenarioController : MonoBehaviour {
     // Start presenting a new scenario
     public void StartScenario (int scenarioIndex)
     {
-        playSound(scenarioIndex);
+        //playSound(scenarioIndex);
         currentScenario = scenarios[scenarioIndex];
         StartCoroutine(PlayThroughScenario());
     }
@@ -68,12 +70,15 @@ public class ScenarioController : MonoBehaviour {
     {
         SetButtonsEnable(ScenarioMode.Story);
         int getIndex = st.index == 1 ? 0 : 1;
-        text.GetComponent<Text>().text = st.text.Replace("[message]", responses[getIndex]);
+        string fixedText = st.text.Replace("[message]", responses[getIndex]);
+        text.GetComponent<Text>().color = playerColors[playerIndex];
+        text.GetComponent<typer>().StartRoutines(fixedText);
     }
 
     // Display choices
     public void DisplayChoices (Choice c)
-    { 
+    {
+        currentChoice = c;
         SetButtonsEnable(ScenarioMode.Choice);
         for (int i = 0; i < c.choices.Count; ++i)
         {
@@ -84,16 +89,17 @@ public class ScenarioController : MonoBehaviour {
     // Display end text
     public void DisplayEndText (EndText et)
     {
-        
         SetButtonsEnable(ScenarioMode.Story);
-        text.GetComponent<Text>().text = et.GetFromChoices();
+        text.GetComponent<Text>().color = playerColors[playerIndex];
+        text.GetComponent<typer>().StartRoutines(et.GetFromChoices());
     }
     
     // Display response field
     public void DisplayResponseField (Response r)
     {
         SetButtonsEnable(ScenarioMode.Respond);
-        responseBox.GetChild(0).GetComponent<Text>().text = r.GetFromChoices();
+        responseBox.GetChild(0).GetComponent<Text>().color = playerColors[playerIndex];
+        responseBox.GetChild(0).GetComponent<typer>().StartRoutines(r.GetFromChoices());
     }
 
     // Respond to scenario
@@ -123,9 +129,10 @@ public class ScenarioController : MonoBehaviour {
         {
             moveOn = false;
             playerIndex = s.index;
+            playerIndicator.text = string.Format("For Player {0}'s eyes", playerIndex + 1);
+            playerIndicator.color = playerColors[playerIndex];
             if (s.GetType() == typeof(Choice))
             {
-                currentChoice = (Choice)s;
                 DisplayChoices((Choice)s);
             }
             else if (s.GetType() == typeof(Response))
@@ -148,10 +155,18 @@ public class ScenarioController : MonoBehaviour {
             {
                 yield return new WaitForEndOfFrame();
             }
+            StopAllTypingRoutines();
         }
         text.GetComponent<Text>().text = "";
         SetButtonsEnable(ScenarioMode.Story);
         finished = true;
+    }
+
+    // Stop all typing routines
+    private void StopAllTypingRoutines ()
+    {
+        text.GetComponent<typer>().StopRoutines();
+        responseBox.GetChild(0).GetComponent<typer>().StopRoutines();
     }
 
     // Make the buttons visible or invisible

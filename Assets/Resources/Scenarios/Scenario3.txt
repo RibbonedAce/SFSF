@@ -1,7 +1,9 @@
 {StartText;0}
 This sector is shady. While this section of the great expanse is seemingly empty, there are nebulas rendered invisible due to a lack of absorbable light. Unfortunately, you were unable to avoid one of these clouds and received damage to your fuel system. You're now at -40 energy. You'll freeze to death unless you have 10 energy to spend. By yourself, you will only be able to generate your energy back to -10.
 You receive a transmission... the Transport ship is once again within your vicinity. The transmission is as follows:
+
 [message]
+
 You are aware that the Transport ship has only 20 energy. If they sacrifice all of their energy, it will buy you enough time to generate enough energy for both ships. This will only work if they trust you.
 
 [partSplit]
@@ -21,9 +23,11 @@ Do nothing.
 
 {EndText;0;0}
 The Transport ship operator chose to put their faith in you. With their aid, you were able to not only survive, but create a surplus level of energy of 50.
+
 The Transport ship now flew through a nebula and has lost their energy. Will you return the favor and send resources?
 [choiceSplit]
 The Transport ship operator chose selfishly, leaving you to fend for yourself with negative energy reserves. Without their aid, you were unexpectedly able to not only survive, but create a surplus level of energy of 50.
+
 The Transport ship now went through a nebula and has lost their energy. Will you show mercy and send resources?
 
 [partSplit]

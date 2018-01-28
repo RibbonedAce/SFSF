@@ -7,9 +7,8 @@ public class typer : MonoBehaviour {
 
 	Text txt;
 	Text tmp;
-	string story;
 	private bool t;
-
+    private bool stop = false;
 
 	public float speed;
 	public AudioSource mySource;
@@ -22,35 +21,44 @@ public class typer : MonoBehaviour {
 	void Awake () 
 	{
 		txt = GetComponent<Text>();
-		story = txt.text;
-		txt.text = "";
-
-		t = true;
 
 		mySource = GetComponent<AudioSource>();
 		mySounds = Resources.LoadAll<AudioClip>("Audio/typingSound");
-
-
-		StartCoroutine ("PlayText");
-		StartCoroutine ("PlaySound");
 	}
 
+    public void StopRoutines ()
+    {
+        stop = true;
+    }
 
-	IEnumerator PlaySound()
+    public void StartRoutines (string text)
+    {
+        stop = false;
+        StartCoroutine(PlayText(text));
+        StartCoroutine(PlaySound(text));
+    }
+
+	public IEnumerator PlaySound(string story)
 	{
 		foreach (char c in story) 
 		{
-			if (t == true)
+			if (t)
 			{
 				mySource.clip = mySounds[Random.Range(0, mySounds.Length)];
 				mySource.Play();
 				yield return new WaitForSeconds (0.125f);	
 			}
+            if (stop)
+            {
+                break;
+            }
 		}
 	}
 
-    IEnumerator PlayText()
+    public IEnumerator PlayText(string story)
 	{
+        t = true;
+        txt.text = "";
 		foreach (char c in story) 
 		{
             txt.text += c;
@@ -60,6 +68,10 @@ public class typer : MonoBehaviour {
 
             yield return new WaitForSeconds(speed);
             txt.text = tempTxt;
+            if (stop)
+            {
+                break;
+            }
         }
         t = false;
         StartCoroutine(PlayBlinkingCursor());
@@ -67,7 +79,8 @@ public class typer : MonoBehaviour {
 
     IEnumerator PlayBlinkingCursor()
     {
-        while (true)
+        string story = txt.text;
+        while (!stop)
         {
             txt.text += " |";
             yield return new WaitForSeconds(blinkingSpeed);
