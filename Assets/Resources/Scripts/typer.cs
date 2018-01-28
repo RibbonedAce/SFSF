@@ -12,14 +12,14 @@ public class typer : MonoBehaviour {
 
 
 	public float speed;
-<<<<<<< HEAD
+
 	public AudioSource mySource;
 	public AudioClip[] mySounds;
 
 
-=======
+
     public float blinkingSpeed;
->>>>>>> 038cffdf5b14af56b6643f2ea1df23e137e991fb
+
 
 	void Awake () 
 	{
@@ -27,16 +27,14 @@ public class typer : MonoBehaviour {
 		story = txt.text;
 		txt.text = "";
 
-<<<<<<< HEAD
+
 		t = true;
 
 		mySource = GetComponent<AudioSource>();
 		mySounds = Resources.LoadAll<AudioClip>("Audio/typingSound");
 
-=======
-        transform.position = txt.transform.position;
 		// TODO: add optional delay when to start
->>>>>>> 038cffdf5b14af56b6643f2ea1df23e137e991fb
+
 		StartCoroutine ("PlayText");
 		StartCoroutine ("PlaySound");
 	}
@@ -48,19 +46,6 @@ public class typer : MonoBehaviour {
             StartCoroutine(PlayBlinkingCursor());
         }*/
     }
-
-
-<<<<<<< HEAD
-
-	IEnumerator PlayText()
-	{
-		foreach (char c in story) 
-		{
-			txt.text += c;
-			yield return new WaitForSeconds (speed);
-		}
-		t = false;
-	}
 
 	IEnumerator PlaySound()
 	{
@@ -74,7 +59,7 @@ public class typer : MonoBehaviour {
 			}
 		}
 	}
-=======
+
     IEnumerator PlayText()
 	{
 		foreach (char c in story) 
@@ -102,6 +87,5 @@ public class typer : MonoBehaviour {
             yield return new WaitForSeconds(blinkingSpeed);
         }
     }
->>>>>>> 038cffdf5b14af56b6643f2ea1df23e137e991fb
 
 }
