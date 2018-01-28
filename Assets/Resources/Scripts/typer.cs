@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class typer : MonoBehaviour {
 
 	Text txt;
-	Text tmp;
 	private bool t;
     private bool stop = false;
 
