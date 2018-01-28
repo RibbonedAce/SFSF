@@ -1,0 +1,68 @@
+{StartText;0}
+It is now apparent to you that the Sleeper ship is on a course similar to your own. It is rare another ship will maintain such close proximity over multiple cycles unless this is so. The close proximity allows you to receive a transmission.
+[message]
+The two of you aren't quite clear of the nebulas yet. You discuss that there is a way for the both of you to maintain power through this sector. Your ships drift together and connect power supplies. With this connection, you will maintain 20 energy each. But there is the option of taking in a higher voltage of power and taking advantage of the Sleeper ship. This would give you 40 energy, but leave them with 0. If the Sleeper ship attempts to take advantage of you while you maintain a normal voltage, then you will end up with 0 and them with 40. Finally, if both ships attempt to take a higher voltage, both will end up with -10 energy.
+
+[partSplit]
+
+{Choice;0}
+Take higher voltage.
+[choiceSplit]
+Maintain normal voltage.
+
+[partSplit]
+
+{StartText;1}
+It is now apparent to you that the Transport ship is on a course similar to your own. It is rare another ship will maintain such close proximity over multiple cycles unless this is so. The close proximity allows your transmission to send through properly.
+The two of you aren't quite clear of the nebulas yet. You discuss that there is a way for the both of you to maintain power through this sector. Your ships drift together and connect power supplies. With this connection, you will maintain 20 energy each. But there is the option of taking in a higher voltage of power and taking advantage of the Transport ship. This would give you 40 energy, but leave them with 0. If the Transport ship attempts to take advantage of you while you maintain a normal voltage, then you will end up with 0 and them with 40. Finally, if both ships attempt to take a higher voltage, both will end up with -10 energy.
+
+[partSplit]
+
+{Choice;1}
+Take higher voltage.
+[choiceSplit]
+Maintain normal voltage.
+
+[partSplit]
+
+{EndText;0;0,1}
+Both you and the Transport ship attempt to take a higher voltage than necessary. You go into negative energy restores. You selfish bunch would have froze in the harsh climate of space if you hadn't been in close proximity to a star. Food for thought. You absorb some solar energy and disconnect power supplies, but remain in close proximity as you travel.
+[choiceSplit]
+While you chose to be courteous of the Transport ship, they did not return the favor. This results in the Transport ship having 40 energy while you are left with 0. Luckily, there is a close by star and you absorb some solar energy. You survive, but no need to thank the Transport ship. The two ships remain connected.
+[choiceSplit]
+While the Transport ship chose to be courteous, you did not return the favor. This results in you having 40 energy while the Transport ship is left with 0. Luckily for the Transport ship, there is a close by star it could absorb solar energy from. The two ships remain connected.
+[choiceSplit]
+Both you and the Transport ship have chosen to be courteous towards one another, supplying 20 energy each and getting you through the remainder of the nebula field in one piece. The two ships remain connected.
+
+[partSplit]
+
+{Response;0;0,1}
+Send a message to your travel partner.
+[choiceSplit]
+Send a message to the Transport ship.
+[choiceSplit]
+Send a message to the Transport ship.
+[choiceSplit]
+Send a message to your travel partner.
+
+[partSplit]
+
+{EndText;1;0,1}
+Both you and the Sleeper ship attempt to take a higher voltage than necessary. You go into negative energy restores. You selfish bunch would have froze in the harsh climate of space if you hadn't been in close proximity to a star. Food for thought. You absorb some solar energy and the ships remain connected.
+[choiceSplit]
+While the Sleeper ship chose to be courteous, you did not return the favor. This results in you having 40 energy while the Sleeper ship is left with 0. Luckily for the Sleeper ship, there is a close by star it could absorb solar energy from. The two ships remain connected.
+[choiceSplit]
+While you chose to be courteous of the Sleeper ship, they did not return the favor. This results in the Sleeper ship having 40 energy while you are left with 0. Luckily, there is a close by star and you absorb some solar energy. You survive, but no need to thank the Sleeper ship. The two ships remain connected.
+[choiceSplit]
+Both you and the Sleeper ship have chosen to be courteous towards one another, supplying 20 energy each and getting you through the remainder of the nebula field in one piece. The two ships remain connected.
+
+[partSplit]
+
+{Response;1;0,1}
+Send a message to your travel partner.
+[choiceSplit]
+Send a message to the Sleeper ship.
+[choiceSplit]
+Send a message to the Sleeper ship.
+[choiceSplit]
+Send a message to your travel partner.

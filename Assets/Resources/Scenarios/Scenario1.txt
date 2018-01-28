@@ -1,0 +1,69 @@
+{StartText;0}
+The great beyond... a place to escape. A variety of characters float around here, humans and creatures one would never think would exist. You'd think it'd be crazy to sit alone on a spaceship years on end taking care of sleeping passengers. Going into hibernation turns years of travel into seconds. Sleep attendants, such as you, aren't in it to be social. The "cargo" doesn't talk much, except occasionally a sleep murmur. It takes a very specific type of introvert for this job. Would make anyone wonder what life did to you to choose to spend all your years managing resources, maintaining a ship, and taking care of these spoiled rich sleepers... all alone... floating through space.
+But then after months of floating in silence, you receive a transmission...
+You realize, you are at 50 fuel cells, but have 0 food crates left. To survive the cosmic cycle, you'd require 25 of both resources. Perhaps you should barter...
+
+[partSplit]
+
+{StartText;1}
+The great beyond... a place to call home. A variety of characters float around here, humans and creature one would never think would exist. You'd think it'd be crazy to sit alone on a spaceship years on end crunching numbers. There's high demand in a universe full of millions of separate currencies for someone who can balance those budgets. Cryptobudgeters make bank, so most of them build a large estate on some "beautiful" planet. That's not for you. You chose to live life to its fullest extent by floating around in a void of lights and darkness by yourself. Would make anyone wonder what life did to you to choose to spend all your years managing resources, maintaining a ship, and "saving" the galactic economy... all alone... floating through space.
+But then after months of floating in silence, you receive a transmission...
+You realize, you are at 50 food crates, but have 0 fuel cells left. To survive the cosmic cycle, you'd require 25 of both resources. Perhaps you should barter...
+
+[partSplit]
+
+{Choice;0}
+Send 25 fuel cells.
+[choiceSplit]
+Do nothing.
+
+[partSplit]
+
+{Choice;1}
+Send 25 food crates.
+[choiceSplit]
+Do nothing.
+
+[partSplit]
+
+{EndText;0;0,1}
+You took a risk... And the Transport ship has responded by sending you some resources to aid you. You now have 25 food crates and 25 fuel cells. You survive this cycle, thanks to a mutually beneficial decision.
+[choiceSplit]
+You took a risk... But the Transport ship ignored you in your time of need. You now have 0 food crates and 25 fuel cells. You will spend this cycle malnourished and starving... Thanks to an unreturned favor.
+[choiceSplit]
+You chose to not help the Transport ship... but they chose to help you in your time of need to their great inconvenience. You now have 50 fuel cells and 25 food crates. You will spend this cycle well-fed and with plentiful food while the Transport ship must deal with your lack of help.
+[choiceSplit]
+You chose to do nothing about your situation. Your lonely nature kept you from reaching out to the Transport ship for help. You'll have plenty of fuel, so perhaps you may have enough to reach a destination that has sustenance to feed you, but the refusal to reach out hardened your situation.
+
+[partSplit]
+
+{EndText;1;0,1}
+You took a risk... And the Sleeper ship has responded by sending you some resources to aid you. You now have 25 food crates and 25 fuel cells. You survive this cycle, thanks to a mutually beneficial decision.
+[choiceSplit]
+You chose to not help the Sleeper ship... but they chose to help you in your time of need to their great inconvenience. You now have 25 fuel cells and 50 food crates. You will spend this cycle well-fed and with plentiful food while the Sleeper ship must deal with your lack of help.
+[choiceSplit]
+You took a risk... But the Sleeper ship ignored you in your time of need. You now have 25 food crates and 0 fuel cells. You will spend this cycle stranded... Thanks to an unreturned favor.
+[choiceSplit]
+You chose to do nothing about your situation. Your lonely nature kept you from reaching out to the Transport ship for help. You'll have plenty of food, so perhaps you may have enough to keep you well-fed before a friendly government assist ship comes around to help, but the refusal to reach out hardened your situation.
+
+[partSplit]
+
+{Response;0;0,1}
+Leave a kind message for the Transport ship operator...
+[choiceSplit]
+Send the Transport ship operator your regards in a message...
+[choiceSplit]
+Leave a message for the Transport ship operator...
+[choiceSplit]
+Send the Trasnsport ship operator your regards in a message...
+
+[partSplit]
+
+{Response;1;0,1}
+Leave a kind message for the Sleeper ship operator...
+[choiceSplit]
+Leave a message for the Sleeper ship operator...
+[choiceSplit]
+Send the Sleeper ship operator your regards in a message...
+[choiceSplit]
+Send a message to the Sleeper ship operator to acknowledge them on their way...
