@@ -34,9 +34,9 @@ public class ScenarioController : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (finished && scenarioIndex < scenarios.Count)
+        if (finished && ++scenarioIndex < scenarios.Count)
         {
-            StartScenario(++scenarioIndex);
+            StartScenario(scenarioIndex);
         }
     }
 
