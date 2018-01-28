@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43883464, g: 0.48701555, b: 0.56727904, a: 1}
+  m_IndirectSpecularColor: {r: 0.43883482, g: 0.48701572, b: 0.56727976, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1434,6 +1434,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224454168485505430, guid: cd9a7087970d1174dacda03f1a7dea1d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd9a7087970d1174dacda03f1a7dea1d, type: 2}

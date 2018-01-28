@@ -18,13 +18,12 @@ public class esc : MonoBehaviour {
 	{
 		DontDestroyOnLoad(gameObject);
 		Destroy(gameObject, 1);
-		SceneManager.LoadScene("Main", LoadSceneMode.Single);
+		SceneManager.LoadScene("cockpit", LoadSceneMode.Single);
 
 	}
 
 	public void creditOnClick()
 	{
-
 		StartCoroutine("creditDelay");
 	}
 
@@ -40,7 +39,7 @@ public class esc : MonoBehaviour {
 
 	private IEnumerator quitDelay()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
 		Application.Quit();
 	}
 
