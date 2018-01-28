@@ -1,0 +1,56 @@
+{StartText;0}
+This sector is shady. While this section of the great expanse is seemingly empty, there are nebulas rendered invisible due to a lack of absorbable light. Unfortunately, you were unable to avoid one of these clouds and received damage to your fuel system. You're now at -40 energy. You'll freeze to death unless you have 10 energy to spend. By yourself, you will only be able to generate your energy back to -10.
+You receive a transmission... the Transport ship is once again within your vicinity. The transmission is as follows:
+[message]
+You are aware that the Transport ship has only 20 energy. If they sacrifice all of their energy, it will buy you enough time to generate enough energy for both ships. This will only work if they trust you.
+
+[partSplit]
+
+{StartText;1}
+This sector is shady. While this section of the great expanse is seemingly empty, there are nebulas rendered invisible due to a lack of absorbable light. The Sleeper ship sends you a distress signal. Unfortunately, they were unable to avoid one of these clouds and received damage to their fuel system. They're now at -40 energy. They'll freeze to death unless they have 10 energy to spend. By their self, they will only be able to generate energy back to -10.
+You current have 20 energy. If you sacrifice all of your energy, there's a chance it will buy you enough time to generate enough energy for both ships, but at your expense.
+
+[partSplit]
+
+{Choice;1}
+Send energy.
+[choiceSplit]
+Do nothing.
+
+[partSplit]
+
+{EndText;0;0}
+The Transport ship operator chose to put their faith in you. With their aid, you were able to not only survive, but create a surplus level of energy of 50.
+The Transport ship now flew through a nebula and has lost their energy. Will you return the favor and send resources?
+[choiceSplit]
+The Transport ship operator chose selfishly, leaving you to fend for yourself with negative energy reserves. Without their aid, you were unexpectedly able to not only survive, but create a surplus level of energy of 50.
+The Transport ship now went through a nebula and has lost their energy. Will you show mercy and send resources?
+
+[partSplit]
+
+{Choice;0}
+Send energy.
+[choiceSplit]
+Do nothing.
+
+[partSplit]
+
+{EndText;1;0,1}
+You sent energy to the Sleeper ship, which proved to be a good investment. As a result of your kindness and faith, the Sleeper ship gained more than enough energy. You were hit by a nebula, putting your energy in the negatives, but it's okay because the Sleeper ship operator chose to return the favor and share their surplus of energy. You both make it out of this terrible place.
+[choiceSplit]
+You sent energy to the Sleeper ship, which proved to be a bad investment. As a result of your kindness and faith, the Sleeper ship gained more than enough energy. You were hit by a nebula shortly after, putting your energy in the negatives. You sent a cry for help, but the Sleeper ship operator chose to not return the favor or share their surplus of energy. The Sleeper ship speeds ahead leaving you behind. Luckily, a kindly tow ship hears your distress call and your back up and running as usual.
+[choiceSplit]
+You decided that you didn't want to risk yourself for the Sleeper ship. You soon fly through a nebula and your energy is forced into negative reserves. You send out a distress signal and miraculously... the Sleeper ship generated a surplus of energy. Not only that... they decide to help you despite your lack of empathy in your past decision. Hopefully you will remember this.
+[choiceSplit]
+You decided that you didn't want to risk yourself for the Sleeper ship. You soon fly through a nebula and your energy is forced into negative reserves. You send out a distress signal and miraculously... the Sleeper ship generated a surplus of energy. But instead of stopping and helping, they speed away into the void without you. Maybe they just couldn't sympathize with your given situation. Hopefully you will remember this.
+
+[partSplit]
+
+{Response;1;0,1}
+Send a personal message to the Sleeper ship.
+[choiceSplit]
+You have the signal to send a single message to the Sleeper ship. What is it?
+[choiceSplit]
+You have the signal to send a single message to the Sleeper ship. What is it?
+[choiceSplit]
+You have the signal to send a single message to the Sleeper ship. What is it?

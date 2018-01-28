@@ -1,0 +1,68 @@
+{StartText;0}
+You float through the void connected to the Transport ship. You find it funny that there is a quite physical connection after all the two of you have been through these past few cycles. You're not quite sure what to really call that connection. Friends? Acquaintances? Business partners? Doesn't really matter at all.
+You receive a transmission from the Transport ship.
+[message]
+ALERT! BLACK HOLE. MAYDAY(@)JS@S(JJJSJHDBIHBHCCEO
+This is bad. Really bad. Two ships, low on resources, approaching something that will eat them alive at an accelerated pace. You gain communication with your acquaintance on the Transport ship. There's nothing you could do about the poor sleeping travellers on your ship. But there's an escape pod. You let the Transport ship operator board and the two of you run down the corridors to find the pod.
+
+[partSplit]
+
+{Choice;0}
+Take the only escape pod.
+[choiceSplit]
+Plea that the Transport ship operator takes it.
+
+[partSplit]
+
+{StartText;1}
+You float through the void connected to the Sleeper ship. You find it funny that there is a quite physical connection after all the two of you have been through these past few cycles. You're not quite sure what to really call that connection. Friends? Acquaintances? Business partners? Doesn't really matter at all.
+You receive a transmission from the Sleeper ship.
+[message]
+ALERT! BLACK HOLE. MAYDAY(@)JS@S(JJJSJHDBIHBHCCEO
+This is bad. Really bad. Two ships, low on resources, approaching something that will eat them alive at an accelerated pace. You gain communication with your acquaintance on the Sleeper ship. There's nothing you could do about your poor ship. A lot of memories here. But your correspondent says there's an escape pod on their ship. The Sleeper ship operator lets you board and the two of you run down the corridors to find the pod.
+You find that there is only space for one of you.
+
+[partSplit]
+
+{Choice;1}
+Take the only escape pod.
+[choiceSplit]
+Plea that the Sleeper ship operator takes it.
+
+[partSplit]
+
+{EndText;0;0,1}
+Both you and your fellow shipman dive for the escape pod. So much time is spent in the dispute of selfishness and fear that it becomes too late. The two of you somehow fit inside, hyperventilating and covered in bruises. The pod floats towards the abyss of the black hole as you feel your air supply run out from overuse. You refuse to look toward the other passenger for comfort.
+You'd think it's crazy to spend your life alone, without feeling for another. But I guess this makes a fitting ending...
+All alone... floating through the great beyond.
+[choiceSplit]
+Your fellow passenger insists you go in the escape pod, but you knew you'd probably take it anyway. It makes you think a little harder about what it means to interact with someone and share a connection. What made someone validate placing you over themselves? As you rocket away to safety you realize that you are the last person that they shall ever see.
+You'd think it's crazy to spend your life alone, without feeling for another. It's a mistake you'll likely never make again...
+All alone... floating through the great beyond.
+[choiceSplit]
+You insist that your fellow passenger goes in the escape pod, and they take the opportunity without argument. It makes you think a little harder about what it means to interact with someone and through what sequence of thought you've made this decision. As they rocket away to safety you realize that they are the last person that you shall ever see.
+You'd think it's crazy to spend your life alone, without feeling for another. It's the intrusion of empathy that perhaps made this decision worth all the while. This thought dawns on you.
+All alone... Floating through the great beyond.
+[choiceSplit]
+There's an awkward silence as the two of you stare at each other. There's a sudden realization that perhaps the choice can't be made as to who goes in the escape pod. Neither of you can bring yourself to leave the other behind. The thought of leaving the other behind to die alone in nothingness is terrible. You both make the decision to both stay back together.
+There's a comfort between the two of you.
+No longer alone... Floating through the great beyond.
+
+[partSplit]
+
+{EndText;1;0,1}
+Both you and your fellow shipman dive for the escape pod. So much time is spent in the dispute of selfishness and fear that it becomes too late. The two of you somehow fit inside, hyperventilating and covered in bruises. The pod floats towards the abyss of the black hole as you feel your air supply run out from overuse. You refuse to look toward the other passenger for comfort.
+You'd think it's crazy to spend your life alone, without feeling for another. But I guess this makes a fitting ending...
+All alone... floating through the great beyond.
+[choiceSplit]
+You insist that your fellow passenger goes in the escape pod, and they take the opportunity without argument. It makes you think a little harder about what it means to interact with someone and through what sequence of thought you've made this decision. As they rocket away to safety you realize that they are the last person that you shall ever see.
+You'd think it's crazy to spend your life alone, without feeling for another. It's the intrusion of empathy that perhaps made this decision worth all the while. This thought dawns on you.
+All alone... floating through the great beyond.
+[choiceSplit]
+Your fellow passenger insists you go in the escape pod, but you knew you'd probably take it anyway. It makes you think a little harder about what it means to interact with someone and share a connection. What made someone validate placing you over themselves? As you rocket away to safety you realize that you are the last person that they shall ever see.
+You'd think it's crazy to spend your life alone, without feeling for another. It's a mistake you'll likely never make again...
+All alone... Floating through the great beyond.
+[choiceSplit]
+There's an awkward silence as the two of you stare at each other. There's a sudden realization that perhaps the choice can't be made as to who goes in the escape pod. Neither of you can bring yourself to leave the other behind. The thought of leaving the other behind to die alone in nothingness is terrible. You both make the decision to both stay back together.
+There's a comfort between the two of you.
+No longer alone... Floating through the great beyond.

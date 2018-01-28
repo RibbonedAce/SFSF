@@ -11,6 +11,7 @@ public class ScenarioController : MonoBehaviour {
     public Transform text;
     public Transform buttons;
     public Transform responseBox;
+    private Choice currentChoice;
     private int playerIndex;
     private bool moveOn = false;
     private int scenarioIndex = -1;
@@ -47,45 +48,35 @@ public class ScenarioController : MonoBehaviour {
     }
 
     // Display starting text
-    public void DisplayStartText ()
+    public void DisplayStartText (StartText st)
     {
         SetButtonsEnable(ScenarioMode.Story);
-        int getIndex = playerIndex == 1 ? 0 : 1;
-        text.GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].startText.Replace("[message]", responses[getIndex]);
+        int getIndex = st.index == 1 ? 0 : 1;
+        text.GetComponent<Text>().text = st.text.Replace("[message]", responses[getIndex]);
     }
 
     // Display choices
-    public void DisplayChoices ()
+    public void DisplayChoices (Choice c)
     { 
         SetButtonsEnable(ScenarioMode.Choice);
-        for (int i = 0; i < buttons.childCount; ++i)
+        for (int i = 0; i < c.choices.Count; ++i)
         {
-            buttons.GetChild(i).Find("Text").GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].choice.choices[i];
+            buttons.GetChild(i).Find("Text").GetComponent<Text>().text = c.choices[i];
         }
     }
 
     // Display end text
-    public void DisplayEndText ()
+    public void DisplayEndText (EndText et)
     {
         SetButtonsEnable(ScenarioMode.Story);
-        string key = "";
-        foreach (PlayerScenario p in currentScenario.playerScenarios)
-        {
-            key += p.choice.decision;
-        }
-        text.GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].endText[key];
+        text.GetComponent<Text>().text = et.GetFromChoices();
     }
     
     // Display response field
-    public void DisplayResponseField ()
+    public void DisplayResponseField (Response r)
     {
         SetButtonsEnable(ScenarioMode.Respond);
-        string key = "";
-        foreach (PlayerScenario p in currentScenario.playerScenarios)
-        {
-            key += p.choice.decision;
-        }
-        responseBox.GetChild(0).GetComponent<Text>().text = currentScenario.playerScenarios[playerIndex].responseText[key];
+        responseBox.GetChild(0).GetComponent<Text>().text = r.GetFromChoices();
     }
 
     // Respond to scenario
@@ -98,7 +89,7 @@ public class ScenarioController : MonoBehaviour {
     // Make decision for given player scenario
     public void MakeDecision (string value)
     {
-        currentScenario.playerScenarios[playerIndex].choice.decision = value;
+        currentChoice.decision = value;
     }
 
     // Choose when to present next part
@@ -111,41 +102,31 @@ public class ScenarioController : MonoBehaviour {
     public IEnumerator PlayThroughScenario ()
     {
         finished = false;
-        for (int i = 0; i < currentScenario.playerScenarios.Count; ++i)
+        foreach (StoryPart s in currentScenario.scenarioParts)
         {
             moveOn = false;
-            playerIndex = i;
-            DisplayStartText();
-            while (!moveOn)
+            playerIndex = s.index;
+            if (s.GetType() == typeof(Choice))
             {
-                yield return new WaitForEndOfFrame();
+                currentChoice = (Choice)s;
+                DisplayChoices((Choice)s);
             }
-        }
-        for (int i = 0; i < currentScenario.playerScenarios.Count; ++i)
-        {
-            moveOn = false;
-            playerIndex = i;
-            DisplayChoices();
-            while (!moveOn)
+            else if (s.GetType() == typeof(Response))
             {
-                yield return new WaitForEndOfFrame();
+                DisplayResponseField((Response)s);
             }
-        }
-        for (int i = 0; i < currentScenario.playerScenarios.Count; ++i)
-        {
-            moveOn = false;
-            playerIndex = i;
-            DisplayEndText();
-            while (!moveOn)
+            else if (s.GetType() == typeof(StartText))
             {
-                yield return new WaitForEndOfFrame();
+                DisplayStartText((StartText)s);
             }
-        }
-        for (int i = 0; i < currentScenario.playerScenarios.Count; ++i)
-        {
-            moveOn = false;
-            playerIndex = i;
-            DisplayResponseField();
+            else if (s.GetType() == typeof(EndText))
+            {
+                DisplayEndText((EndText)s);
+            }
+            else
+            {
+                Debug.LogError("StoryPart type not valid!");
+            }
             while (!moveOn)
             {
                 yield return new WaitForEndOfFrame();
