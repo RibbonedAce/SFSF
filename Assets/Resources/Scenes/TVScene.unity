@@ -1151,6 +1151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+  mySource: {fileID: 0}
+  mySounds: []
   blinkingSpeed: 0.3
 --- !u!114 &2018546063
 MonoBehaviour:
