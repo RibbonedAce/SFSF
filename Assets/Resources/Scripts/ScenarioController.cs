@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScenarioController : MonoBehaviour {
     public static ScenarioController instance;
@@ -51,10 +52,9 @@ public class ScenarioController : MonoBehaviour {
         {
             StartScenario(scenarioIndex);
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (scenarioIndex >= scenarios.Count)
         {
-            SetButtonsEnable(ScenarioMode.Menu);
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -184,7 +184,6 @@ public class ScenarioController : MonoBehaviour {
         buttons.gameObject.SetActive(mode == ScenarioMode.Choice);
         text.gameObject.SetActive(mode == ScenarioMode.Story);
         responseBox.gameObject.SetActive(mode == ScenarioMode.Respond);
-        menu.gameObject.SetActive(mode == ScenarioMode.Menu);
     }
 
     //play bgm

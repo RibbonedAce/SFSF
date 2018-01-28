@@ -52,8 +52,9 @@ public class cameraEffects : MonoBehaviour
         while (staticEffect.GetComponent<SpriteRenderer>().color.a > 0)
         {
             Color newColor = staticEffect.GetComponent<SpriteRenderer>().color;
-            newColor.a -= .0005f * Time.deltaTime;
+            newColor.a -= .05f * Time.deltaTime;
             staticEffect.GetComponent<SpriteRenderer>().color = newColor;
+            yield return new WaitForEndOfFrame();
         }
         yield return null;
     }
