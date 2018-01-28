@@ -18,7 +18,7 @@ public class esc : MonoBehaviour {
 	{
 		DontDestroyOnLoad(gameObject);
 		Destroy(gameObject, 1);
-        	SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
 	}
 
 	public void creditOnClick()
@@ -45,7 +45,7 @@ public class esc : MonoBehaviour {
 	private IEnumerator creditDelay()
 	{
 		yield return new WaitForSeconds(1);
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(2);
 	}
 
 }
