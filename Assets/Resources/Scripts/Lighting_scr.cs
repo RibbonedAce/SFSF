@@ -23,27 +23,37 @@ public class Lighting_scr : MonoBehaviour {
             k.GetComponent<Renderer>().material.SetColor("_EmissionColor", randColor);
         }
         flickerBools = new Dictionary<Light, bool>();
+        flickerBools.Add(flickeringLight, false);
         foreach (Light l in lights)
         {
             flickerBools.Add(l, false);
             l.intensity = 1;
         }
+        flickeringLight.intensity = 0.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        foreach (Light l in flickerBools.Keys)
+        List<Light> flickerKeys = new List<Light>(flickerBools.Keys);
+        for (int i = 0; i < flickerKeys.Count; ++i)
         {
-            if (!flickerBools[l])
+            if (!flickerBools[flickerKeys[i]])
             {
-                StartCoroutine(addIntensity(l));
+                if (flickerKeys[i] == flickeringLight)
+                {
+                    StartCoroutine(flicker(flickerKeys[i], 0.4f, 0.5f));
+                }
+                else
+                {
+                    StartCoroutine(flicker(flickerKeys[i], 0, 1));
+                }
             }
+            
         }
         changeKeyPadColor();
-        flickerLight();
     }
 
-    IEnumerator addIntensity(Light l)
+    IEnumerator flicker (Light l, float minI, float maxI)
     {
         flickerBools[l] = true;
         float delay = Random.Range(0, 5);
@@ -58,16 +68,16 @@ public class Lighting_scr : MonoBehaviour {
         {
             for (float time = Time.deltaTime; time < f / 2; time += Time.deltaTime)
             {
-                l.intensity = 1 - time / (f / 2);
+                l.intensity = maxI * (1 - time / (f / 2)) + minI * time / (f / 2);
                 yield return new WaitForEndOfFrame();
             }
-            l.intensity = 0;
+            l.intensity = minI;
             for (float time = Time.deltaTime; time < f / 2; time += Time.deltaTime)
             {
-                l.intensity = time / (f / 2);
+                l.intensity = minI * (1 - time / (f / 2)) + maxI * time / (f / 2);
                 yield return new WaitForEndOfFrame();
             }
-            l.intensity = 1;
+            l.intensity = maxI;
         }
         flickerBools[l] = false;
         /*foreach (Light l in lights)
@@ -85,18 +95,11 @@ public class Lighting_scr : MonoBehaviour {
     {
         foreach (GameObject k in keypadButtons)
         {
-            if (Random.Range(0.0f, 1.0f) < 0.6f)
+            if (Random.Range(0.0f, 1.0f) < 0.087f)
             {
-                Color randColor = new Color(
-                Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f),
-                Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-                k.GetComponent<Renderer>().material.SetColor("_EmissionColor", randColor);
+                Color randColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1);
+                k.GetComponent<Renderer>().material.SetColor("_EmissionColor", Utilities.NormalizeColor(randColor, false));
             }
         }
-    }
-
-    void flickerLight ()
-    {
-        flickeringLight.intensity = Random.Range(0.4f, 0.5f);
     }
 }

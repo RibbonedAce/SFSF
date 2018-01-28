@@ -57,4 +57,15 @@ public class Utilities {
         }
         return result;
     }
+
+    // Normalize a color to be brighter
+    public static Color NormalizeColor (Color color, bool useAlpha)
+    {
+        float max = Mathf.Max(color.r, color.b, color.g, useAlpha ? color.a : 0);
+        if (max == 0)
+        {
+            return useAlpha ? Color.clear : Color.black;
+        }
+        return new Color(color.r / max, color.b / max, color.g / max, useAlpha ? color.a / max : color.a);
+    }
 }
