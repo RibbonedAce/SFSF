@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class pauseMenu : MonoBehaviour {
 
 	private IEnumerator quitDelay()
 	{
-		yield return new WaitForSeconds(1);
-		Application.Quit();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(0);
 	}
 }

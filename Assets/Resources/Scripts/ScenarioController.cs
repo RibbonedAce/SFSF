@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScenarioController : MonoBehaviour {
     public static ScenarioController instance;
@@ -18,6 +19,7 @@ public class ScenarioController : MonoBehaviour {
     private bool moveOn = false;
     private int scenarioIndex = -1;
     private bool finished = true;
+    private bool canStart = false;
 
     private AudioSource bgmSource;
     private AudioClip[] bgmClips;
@@ -40,27 +42,27 @@ public class ScenarioController : MonoBehaviour {
         responses.Add("");
         responses.Add("");
         text.GetComponent<Text>().text = "";
-        SetButtonsEnable(ScenarioMode.Story);
+        StartCoroutine(StartWithDelay(2));
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (finished && ++scenarioIndex < scenarios.Count)
+        if (canStart && finished && ++scenarioIndex < scenarios.Count)
         {
             StartScenario(scenarioIndex);
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (scenarioIndex >= scenarios.Count)
         {
-            SetButtonsEnable(ScenarioMode.Menu);
+            SceneManager.LoadScene(0);
         }
     }
 
     // Start presenting a new scenario
     public void StartScenario (int scenarioIndex)
     {
-        //playSound(scenarioIndex);
+        playSound(scenarioIndex);
+        GameObject.Find("PlayerText").SetActive(true);
         currentScenario = scenarios[scenarioIndex];
         StartCoroutine(PlayThroughScenario());
     }
@@ -121,6 +123,12 @@ public class ScenarioController : MonoBehaviour {
         moveOn = true;
     }
 
+    private IEnumerator StartWithDelay (float time)
+    {
+        yield return new WaitForSeconds(time);
+        canStart = true;
+    }
+
     // Going through the scnario
     public IEnumerator PlayThroughScenario ()
     {
@@ -176,13 +184,12 @@ public class ScenarioController : MonoBehaviour {
         buttons.gameObject.SetActive(mode == ScenarioMode.Choice);
         text.gameObject.SetActive(mode == ScenarioMode.Story);
         responseBox.gameObject.SetActive(mode == ScenarioMode.Respond);
-        menu.gameObject.SetActive(mode == ScenarioMode.Menu);
     }
 
     //play bgm
     private void playSound (int i)
     {
-        bgmSource.clip = bgmClips[0];
+        bgmSource.clip = bgmClips[Mathf.Max(0, i - 1)];
         bgmSource.Play();
     }
 
