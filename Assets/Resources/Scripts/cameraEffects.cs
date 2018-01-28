@@ -22,10 +22,7 @@ public class cameraEffects : MonoBehaviour
         {
             zooming = true;
         }
-        if (Random.Range(0.0f, 100.0f) < 2f)
-        {
-            StartCoroutine(cameraShake());
-        }
+
 
         if (zooming)
         {
