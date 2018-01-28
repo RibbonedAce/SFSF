@@ -68,6 +68,7 @@ public class ScenarioController : MonoBehaviour {
     // Display end text
     public void DisplayEndText (EndText et)
     {
+        
         SetButtonsEnable(ScenarioMode.Story);
         text.GetComponent<Text>().text = et.GetFromChoices();
     }
