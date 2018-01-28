@@ -1,13 +1,17 @@
 {StartText;0}
 You've once again made contact with the Transport ship operator. Their transmission is as follows:
+
 [message]
+
 But it seems that you're not doing too well on food again. Both you and your sleeping passengers might starve, but there is a minor chance of regenerating food in time before that happens. You're sure the Transport ship operator should have more than enough food if they were to just share it with you. Your fate is in their hands.
 
 [partSplit]
 
 {StartText;1}
 You've once again made contact with the Sleeper ship operator. They're transmission is as follows:
+
 [message]
+
 You get a distress call from the Sleeper ship operator asking for food. You've got enough food for the time being, but the chances of finding anything edible in this quadrant of the galaxy is next to none. Keeping to yourself this time may be safe, but the distress call beckons.
 
 [partSplit]
