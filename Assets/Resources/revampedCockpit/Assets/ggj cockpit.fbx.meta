@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 9aa7100022f811141b4dd0534bf4dba9
+timeCreated: 1517170223
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: buttons
+    100002: Camera
+    100004: ChamferBox002
+    100006: Cube
+    100008: //RootNode
+    100010: mic
+    100012: morse code
+    100014: NurbsPath.000
+    100016: NurbsPath.001
+    100018: NurbsPath.002
+    100020: NurbsPath.003
+    100022: NurbsPath.004
+    100024: NurbsPath.005
+    100026: Point
+    100028: Point.001
+    100030: Point.002
+    100032: Point.003
+    100034: Radios
+    100036: radios
+    100038: square grid
+    100040: TV
+    100042: Untitled
+    400000: buttons
+    400002: Camera
+    400004: ChamferBox002
+    400006: Cube
+    400008: //RootNode
+    400010: mic
+    400012: morse code
+    400014: NurbsPath.000
+    400016: NurbsPath.001
+    400018: NurbsPath.002
+    400020: NurbsPath.003
+    400022: NurbsPath.004
+    400024: NurbsPath.005
+    400026: Point
+    400028: Point.001
+    400030: Point.002
+    400032: Point.003
+    400034: Radios
+    400036: radios
+    400038: square grid
+    400040: TV
+    400042: Untitled
+    2300000: ChamferBox002
+    2300002: Cube
+    2300004: mic
+    2300006: morse code
+    2300008: NurbsPath.000
+    2300010: NurbsPath.001
+    2300012: NurbsPath.002
+    2300014: NurbsPath.003
+    2300016: NurbsPath.004
+    2300018: NurbsPath.005
+    2300020: TV
+    2300022: Untitled
+    3300000: ChamferBox002
+    3300002: Cube
+    3300004: mic
+    3300006: morse code
+    3300008: NurbsPath.000
+    3300010: NurbsPath.001
+    3300012: NurbsPath.002
+    3300014: NurbsPath.003
+    3300016: NurbsPath.004
+    3300018: NurbsPath.005
+    3300020: TV
+    3300022: Untitled
+    4300000: NurbsPath.005
+    4300002: NurbsPath.004
+    4300004: NurbsPath.003
+    4300006: NurbsPath.002
+    4300008: NurbsPath.000
+    4300010: ChamferBox002
+    4300012: Untitled
+    4300014: mic
+    4300016: morse code
+    4300018: TV
+    4300020: Cube
+    4300022: NurbsPath.001
+    7400000: ChamferBox002|ChamferBox002|Take 001|BaseLayer
+    7400002: ChamferBox002|Cylinder007|Take 001|BaseLayer
+    7400004: ChamferBox002|Cylinder008|Take 001|BaseLayer
+    7400006: ChamferBox002|Cylinder009|Take 001|BaseLayer
+    7400008: ChamferBox002|Cylinder010|Take 001|BaseLayer
+    7400010: ChamferBox002|Cylinder011|Take 001|BaseLayer
+    7400012: ChamferBox002|Shader NodetreeAction
+    7400014: ChamferBox002|Shader NodetreeAction.001
+    7400016: ChamferBox002|TV|Take 001|BaseLayer
+    7400018: TV|ChamferBox002|Take 001|BaseLayer
+    7400020: TV|Cylinder007|Take 001|BaseLayer
+    7400022: TV|Cylinder008|Take 001|BaseLayer
+    7400024: TV|Cylinder009|Take 001|BaseLayer
+    7400026: TV|Cylinder010|Take 001|BaseLayer
+    7400028: TV|Cylinder011|Take 001|BaseLayer
+    7400030: TV|Shader NodetreeAction
+    7400032: TV|Shader NodetreeAction.001
+    7400034: TV|TV|Take 001|BaseLayer
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
