@@ -9,6 +9,8 @@ public class cameraEffects : MonoBehaviour
     public float shakeOffset;
     public float amountOfShakes;
     public float waitBetweenShakes;
+    public GameObject staticEffect;
+    private float t = 0;
     // Use this for initialization
     void Start()
     {
@@ -18,7 +20,8 @@ public class cameraEffects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        t += Time.deltaTime;
+        if (t >= 1)
         {
             zooming = true;
         }
@@ -33,14 +36,26 @@ public class cameraEffects : MonoBehaviour
 
     public IEnumerator zoom()
     {
+        StartCoroutine(fadeStatic());
         while (Camera.main.orthographicSize > 1f)
         {
-            Camera.main.orthographicSize -= 2 * Time.deltaTime;
+            Camera.main.orthographicSize -= 0.1f * Time.deltaTime;
             Vector3 newPos = Vector3.Lerp(Camera.main.transform.position,
                 tv.transform.Find("centerCoord").transform.position, 0.1f);
             Camera.main.transform.position = newPos;
             yield return new WaitForSeconds(0.0f);
         }
+    }
+
+    public IEnumerator fadeStatic()
+    {
+        while (staticEffect.GetComponent<SpriteRenderer>().color.a > 0)
+        {
+            Color newColor = staticEffect.GetComponent<SpriteRenderer>().color;
+            newColor.a -= .0005f * Time.deltaTime;
+            staticEffect.GetComponent<SpriteRenderer>().color = newColor;
+        }
+        yield return null;
     }
 
     public IEnumerator cameraShake()
