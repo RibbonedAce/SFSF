@@ -21,6 +21,9 @@ public class ScenarioController : MonoBehaviour {
 
     private AudioSource bgmSource;
     private AudioClip[] bgmClips;
+    public Transform menu;
+    private bool[] modeCheck;
+    private ScenarioMode currentMode;
 
     void Awake ()
     {
@@ -46,6 +49,11 @@ public class ScenarioController : MonoBehaviour {
         if (finished && ++scenarioIndex < scenarios.Count)
         {
             StartScenario(scenarioIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetButtonsEnable(ScenarioMode.Menu);
         }
     }
 
@@ -164,23 +172,31 @@ public class ScenarioController : MonoBehaviour {
     // Make the buttons visible or invisible
     private void SetButtonsEnable (ScenarioMode mode)
     {
+        currentMode = mode == ScenarioMode.Menu ? currentMode : mode;
         buttons.gameObject.SetActive(mode == ScenarioMode.Choice);
         text.gameObject.SetActive(mode == ScenarioMode.Story);
         responseBox.gameObject.SetActive(mode == ScenarioMode.Respond);
+        menu.gameObject.SetActive(mode == ScenarioMode.Menu);
     }
 
     //play bgm
-    private void playSound(int i)
+    private void playSound (int i)
     {
-        bgmSource.clip = bgmClips[i];
+        bgmSource.clip = bgmClips[0];
         bgmSource.Play();
-
     }
+
+    public void resumeGame()
+    {
+        SetButtonsEnable(currentMode);
+    }
+
 }
 
 public enum ScenarioMode
 {
     Story,
     Choice,
-    Respond
+    Respond,
+    Menu
 }
