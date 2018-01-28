@@ -8,6 +8,6 @@ public class StartText : StoryPart {
     public StartText (string data, int newIndex)
     {
         index = newIndex;
-        text = data;
+        text = data.Trim();
     }
 }
