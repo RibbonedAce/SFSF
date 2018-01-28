@@ -17,6 +17,8 @@ public class typer : MonoBehaviour {
 
     public float blinkingSpeed;
 
+
+
 	void Awake () 
 	{
 		txt = GetComponent<Text>();
@@ -28,14 +30,10 @@ public class typer : MonoBehaviour {
 		mySource = GetComponent<AudioSource>();
 		mySounds = Resources.LoadAll<AudioClip>("Audio/typingSound");
 
-        transform.position = txt.transform.position;
+
 		StartCoroutine ("PlayText");
 		StartCoroutine ("PlaySound");
 	}
-
-    private void Update()
-    {}
-
 
 
 	IEnumerator PlaySound()
