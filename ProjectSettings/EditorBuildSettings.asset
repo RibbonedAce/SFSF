@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/creditScene.unity
     guid: c31866f1e67104551b55c5e251f60350
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Scenes/escScene.unity
     guid: 8b9184756b203477c9851e63fefbdd40
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Scenes/Main.unity
     guid: 798ae8c32341b44459ff5ebc215058b1
+  - enabled: 1
+    path: Assets/Resources/Scenes/cockpit.unity
+    guid: b6363f1e055daca43ab4c484df0aae92

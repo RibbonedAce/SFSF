@@ -18,6 +18,7 @@ public class ScenarioController : MonoBehaviour {
     private bool moveOn = false;
     private int scenarioIndex = -1;
     private bool finished = true;
+    private bool canStart = false;
 
     private AudioSource bgmSource;
     private AudioClip[] bgmClips;
@@ -40,13 +41,13 @@ public class ScenarioController : MonoBehaviour {
         responses.Add("");
         responses.Add("");
         text.GetComponent<Text>().text = "";
-        SetButtonsEnable(ScenarioMode.Story);
+        StartCoroutine(StartWithDelay(2));
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (finished && ++scenarioIndex < scenarios.Count)
+        if (canStart && finished && ++scenarioIndex < scenarios.Count)
         {
             StartScenario(scenarioIndex);
         }
@@ -60,7 +61,8 @@ public class ScenarioController : MonoBehaviour {
     // Start presenting a new scenario
     public void StartScenario (int scenarioIndex)
     {
-        //playSound(scenarioIndex);
+        playSound(scenarioIndex);
+        GameObject.Find("PlayerText").SetActive(true);
         currentScenario = scenarios[scenarioIndex];
         StartCoroutine(PlayThroughScenario());
     }
@@ -119,6 +121,12 @@ public class ScenarioController : MonoBehaviour {
     public void Continue ()
     {
         moveOn = true;
+    }
+
+    private IEnumerator StartWithDelay (float time)
+    {
+        yield return new WaitForSeconds(time);
+        canStart = true;
     }
 
     // Going through the scnario
@@ -182,7 +190,7 @@ public class ScenarioController : MonoBehaviour {
     //play bgm
     private void playSound (int i)
     {
-        bgmSource.clip = bgmClips[0];
+        bgmSource.clip = bgmClips[Mathf.Max(0, i - 1)];
         bgmSource.Play();
     }
 
