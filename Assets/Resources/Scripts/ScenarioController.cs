@@ -17,8 +17,15 @@ public class ScenarioController : MonoBehaviour {
     private int scenarioIndex = -1;
     private bool finished = true;
 
+    private AudioSource bgmSource;
+    private AudioClip[] bgmClips;
+
     void Awake ()
     {
+        bgmSource = GetComponent<AudioSource>();
+        bgmClips = Resources.LoadAll<AudioClip>("Audio/bgmSound");
+
+
         scenarios = new List<Scenario>();
         foreach (TextAsset t in Resources.LoadAll<TextAsset>("Scenarios"))
         {
@@ -43,6 +50,7 @@ public class ScenarioController : MonoBehaviour {
     // Start presenting a new scenario
     public void StartScenario (int scenarioIndex)
     {
+        playSound(scenarioIndex);
         currentScenario = scenarios[scenarioIndex];
         StartCoroutine(PlayThroughScenario());
     }
@@ -144,6 +152,14 @@ public class ScenarioController : MonoBehaviour {
         buttons.gameObject.SetActive(mode == ScenarioMode.Choice);
         text.gameObject.SetActive(mode == ScenarioMode.Story);
         responseBox.gameObject.SetActive(mode == ScenarioMode.Respond);
+    }
+
+    //play bgm
+    private void playSound(int i)
+    {
+        bgmSource.clip = bgmClips[i];
+        bgmSource.Play();
+
     }
 }
 
