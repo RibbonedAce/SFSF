@@ -198,12 +198,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 331974589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd75017ad73344dc391b573b2a1d3191, type: 3}
+  m_Script: {fileID: 11500000, guid: 2efd978f3131b754cb0902b90da3cc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  mySound: {fileID: 8300000, guid: 951c487192ce14361bc5f2ed6c97fc9c, type: 3}
-  mySource: {fileID: 331974594}
+  speed: 0.12
+  mySource: {fileID: 0}
+  mySounds: []
+  blinkingSpeed: 0.5
 --- !u!82 &331974594
 AudioSource:
   m_ObjectHideFlags: 0

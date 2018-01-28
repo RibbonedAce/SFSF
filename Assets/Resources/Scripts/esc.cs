@@ -1,4 +1,4 @@
-﻿	using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,17 +24,30 @@ public class esc : MonoBehaviour {
 
 	public void creditOnClick()
 	{
-		SceneManager.LoadScene("creditScene", LoadSceneMode.Single);
+
+		StartCoroutine("creditDelay");
 	}
 
 	public void endOnClick()
 	{
-		Application.Quit();
+		StartCoroutine("quitDelay");
 	}
 
 	public void mainOnClick()
 	{
 		SceneManager.LoadScene("beginningScene", LoadSceneMode.Single);
+	}
+
+	private IEnumerator quitDelay()
+	{
+		yield return new WaitForSeconds(0.125f);
+		Application.Quit();
+	}
+
+	private IEnumerator creditDelay()
+	{
+		yield return new WaitForSeconds(1);
+		SceneManager.LoadScene("creditScene", LoadSceneMode.Single);
 	}
 
 }
