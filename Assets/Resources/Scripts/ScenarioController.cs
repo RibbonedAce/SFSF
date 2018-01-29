@@ -164,6 +164,7 @@ public class ScenarioController : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
             StopAllTypingRoutines();
+            yield return new WaitForSeconds(0.5f);
         }
         text.GetComponent<Text>().text = "";
         SetButtonsEnable(ScenarioMode.Story);

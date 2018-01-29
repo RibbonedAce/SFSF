@@ -10,16 +10,23 @@ public class esc : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey(KeyCode.Escape))
 		{
-			SceneManager.LoadScene("escScene", LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+            else
+            {
+                SceneManager.LoadScene(0);
+            }
 		}
 	}
 
 	public void playOnClick()
 	{
-		DontDestroyOnLoad(gameObject);
-		Destroy(gameObject, 1);
+		//DontDestroyOnLoad(gameObject);
+		//Destroy(gameObject, 1);
         SceneManager.LoadScene(1);
-	}
+    }
 
 	public void creditOnClick()
 	{
